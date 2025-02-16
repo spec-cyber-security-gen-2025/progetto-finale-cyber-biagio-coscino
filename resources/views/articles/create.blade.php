@@ -1,4 +1,9 @@
 <x-layout>
+    @if (session('error'))
+    <div class="alert alert-danger fixed-top">
+        {{ session('error') }}
+    </div>
+    @endif
     <div class="container my-5">
         <div class="row justify-content-center">
             <div class="col-12 col-md-8">

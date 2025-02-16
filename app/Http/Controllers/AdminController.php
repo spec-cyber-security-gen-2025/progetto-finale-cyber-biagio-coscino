@@ -57,6 +57,7 @@ class AdminController extends Controller
     public function setAdmin(User $user){
         $user->is_admin = true;
         $user->save();
+        Log::info("L'utente $user->name è stato promosso a admin da " . Auth::user()->name);
 
         return redirect(route('admin.dashboard'))->with('message', "$user->name is now administrator");
     }
@@ -64,6 +65,7 @@ class AdminController extends Controller
     public function setRevisor(User $user){
         $user->is_revisor = true;
         $user->save();
+        Log::info("L'utente $user->name è stato promosso a revisore da " . Auth::user()->name);
 
         return redirect(route('admin.dashboard'))->with('message', "$user->name is now revisor");
     }
@@ -71,6 +73,7 @@ class AdminController extends Controller
     public function setWriter(User $user){
         $user->is_writer = true;
         $user->save();
+        Log::info("L'utente $user->name è stato promosso a writer da " . Auth::user()->name);
 
         return redirect(route('admin.dashboard'))->with('message', "$user->name is now writer");
     }
