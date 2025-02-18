@@ -49,4 +49,12 @@ Route::middleware(['admin','admin.local'])->group(function(){
     Route::delete('/admin/delete/category/{category}', [AdminController::class, 'deleteCategory'])->name('admin.deleteCategory');
     Route::post('/admin/category/store', [AdminController::class, 'storeCategory'])->name('admin.storeCategory');
     Route::post('/admin/tag/store', [AdminController::class, 'storeTag'])->name('admin.storeTag');
+
 });
+// routes/web.php
+
+// Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
+//     Route::get('/dashboard', [AdminController::class, 'dashboard']);
+//     Route::get('/users', [AdminController::class, 'users']);
+    // Altre rotte amministrative
+// });
